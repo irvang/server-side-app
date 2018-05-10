@@ -1,19 +1,10 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => res.send('Hello World!'));
+const controller = require('./route');
 
-app.get('/andrew', function (req, res) {
-	res.send('<h1>Hello Andrew!</h1><p>How are you?</p>');
-});
+// console.log(controller.toString());
 
-app.get('/irving', function (req, res) {
-	res.send('Hello, Irving!');
-});
-
-app.get('/errbody', function (req, res) {
-	res.send('Hello, Errbody!');
-});
-
+controller(app);
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
