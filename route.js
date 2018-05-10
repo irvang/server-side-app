@@ -13,6 +13,11 @@ function controller(app) {
 		res.send(`<h2> Hello, the world.`);
 		console.log(res.headers);
 	});
+
+	app.get('/stat', function (req,res) {
+		console.log(__dirname)
+		res.sendFile( __dirname + '/index.html');
+	});
 }
 
 module.exports = controller;
